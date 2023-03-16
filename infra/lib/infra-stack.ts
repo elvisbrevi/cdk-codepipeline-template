@@ -21,7 +21,8 @@ export class LambdaExamplesStack extends Stack {
         commands: ['npm install',
                    'npm ci',
                    'npm run build',
-                   'npx cdk synth']
+                   'npx cdk synth'],
+        primaryOutputDirectory: 'infra/cdk.out'
       }),
     });
 
