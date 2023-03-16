@@ -16,8 +16,8 @@ export class LambdaExamplesStack extends Stack {
       pipelineName: 'example-pipeline',
       synth: new ShellStep('synth-step', {
         input: CodePipelineSource.gitHub('elvisbrevi/cdk-codepipeline-template', 'master'),
-        commands: ['npm install',
-                   'npm ci',
+        installCommands: ['npm i -g npm@latest'],
+        commands: ['npm ci',
                    'npm run build',
                    'npmx cdk synth']
       }),
