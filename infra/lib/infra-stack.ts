@@ -21,7 +21,7 @@ export class LambdaExamplesStack extends Stack {
         commands: ['npm install',
                    'npm ci',
                    'npm run build',
-                   'npmx cdk synth']
+                   'npx cdk synth']
       }),
     });
 
