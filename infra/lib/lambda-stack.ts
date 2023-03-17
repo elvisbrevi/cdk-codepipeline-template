@@ -19,7 +19,7 @@ export class LambdaStack extends Stack {
       this, '../functions/example-1','lambda-hello-world-' + stageName, stageName);
 
     // add write permission to lambda
-    //table.grantReadWriteData(lambda);
+    table.grantReadWriteData(lambda);
 
     // api gateway for lambda
     const restApi = ApiGwHelper.CreateRestApi(this, 'apigwt-hello-world');
