@@ -16,7 +16,7 @@ export class LambdaStack extends Stack {
 
     // lambda from file
     const lambda = LambdaHelper.CreateFunctionFromFile(
-      this, '../functions/example-1','lambda-hello-world-' + stageName, 'lambda-hello-world', stageName);
+      this, '../functions/example-1','lambda-hello-world-' + stageName, stageName);
 
     // add write permission to lambda
     //table.grantReadWriteData(lambda);
