@@ -5,12 +5,12 @@ import { RemovalPolicy } from 'aws-cdk-lib';
 
 export class DynamoDbHelper  {
 
-    public static CreateTable(construct: Construct, name: string) : cdk_dynamodb.Table {
+    public static CreateTable(construct: Construct, id: string, name: string) : cdk_dynamodb.Table {
 
-        return new cdk_dynamodb.Table(construct, name, {
+        return new cdk_dynamodb.Table(construct, id, {
             partitionKey: { name: 'name', type: cdk_dynamodb.AttributeType.STRING },
             tableName: name,
-            removalPolicy: RemovalPolicy.DESTROY
+            removalPolicy: RemovalPolicy.DESTROY,
         });
     }
 }

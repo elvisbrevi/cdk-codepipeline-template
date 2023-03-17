@@ -9,6 +9,6 @@ const env = {
 }; 
 const app = new cdk.App();
 
-new CodePipelineStack(app, 'cicd-codepipeline-examples', { env: env });
+new CodePipelineStack(app, 'cicd-codepipeline', { env: env });
 
 app.synth();

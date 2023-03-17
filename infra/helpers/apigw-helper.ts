@@ -17,28 +17,6 @@ export class ApiGwHelper  {
             description: 'Rest API from CDK',
         });
 
-        // const hostedZone = HostedZone.fromLookup(construct, "example-hostedzone", {
-        //     domainName:"elvisbrevi.com",
-        // });
-
-        // resApi.addDomainName('example-domain-name', {
-        //     domainName: 'elvisbrevi.com',
-        //     certificate: new acm.DnsValidatedCertificate(construct, 'example-cert', {
-        //         domainName: 'elvisbrevi.com',
-        //         hostedZone: hostedZone,
-        //     }),
-        // });
-
-        // // Create a Route53 record
-        // new ARecord(
-        //     construct,
-        //     "ApiRecord", {
-        //         recordName: "example-api",
-        //         zone:hostedZone,
-        //         target: RecordTarget.fromAlias(new targets.ApiGateway(resApi))
-        //     }
-        // )
-
         return resApi;
     }
 

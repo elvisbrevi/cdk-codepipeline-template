@@ -11,11 +11,12 @@ export class LambdaHelper {
     public static CreateFunctionFromFile(
         construct: Construct,
         filePath: string, 
+        id: string, 
         name: string, 
         stageName: string, 
         destination?: IQueue) : lambda.IFunction {
 
-        return new lambda.Function(construct, name, {
+        return new lambda.Function(construct, id, {
             functionName: name,
             runtime: lambda.Runtime.NODEJS_18_X,
             handler: 'index.handler',
