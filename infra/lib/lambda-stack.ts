@@ -12,7 +12,7 @@ export class LambdaStack extends Stack {
     super(scope, id, props);
 
     // dynamodb
-    //const table = DynamoDbHelper.CreateTable(this, 'user-' + stageName, 'user');
+    const table = DynamoDbHelper.CreateTable(this, 'user-' + stageName);
 
     // lambda from file
     const lambda = LambdaHelper.CreateFunctionFromFile(
