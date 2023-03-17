@@ -10,11 +10,14 @@ import { Construct } from 'constructs';
 export class ApiGwHelper  {
 
     // Defining the REST API service
-    public static CreateRestApi(construct: Construct, id: string) : apigw.RestApi {
+    public static CreateRestApi(construct: Construct, id: string, stageName: string) : apigw.RestApi {
         
         const resApi = new apigw.RestApi(construct, id, {
             restApiName: id,
             description: 'Rest API from CDK',
+            deployOptions: {
+                stageName: stageName,
+            },
         });
 
         return resApi;

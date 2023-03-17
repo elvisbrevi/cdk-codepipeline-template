@@ -1,7 +1,7 @@
 import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
 
 const input = {
-	TableName : "user",
+	TableName : "user" + process.env.stageName,
 	Item: {
 		"name": {
             S: "alberto"

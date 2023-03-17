@@ -22,7 +22,7 @@ export class LambdaStack extends Stack {
     table.grantReadWriteData(lambda);
 
     // api gateway for lambda
-    const restApi = ApiGwHelper.CreateRestApi(this, 'apigwt-hello-world');
+    const restApi = ApiGwHelper.CreateRestApi(this, 'apigwt-' + stageName, stageName);
     const resource = ApiGwHelper.AddResourceToRestApi(this, restApi, 'users');
     const integration = ApiGwHelper.AddLambdaIntegration(lambda);
     const method = ApiGwHelper.AddMethod("POST", resource, integration);
