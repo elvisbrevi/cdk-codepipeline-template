@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { LambdaExamplesStack } from '../lib/infra-stack';
+import { CodePipelineStack } from '../lib/codepipeline-stack';
 
-const exampleEnv = { 
+const env = { 
   account: process.env.CDK_DEFAULT_ACCOUNT, 
   region: process.env.CDK_DEFAULT_REGION 
 }; 
 const app = new cdk.App();
 
-new LambdaExamplesStack(app, 'cicd-codepipeline-examples', { env: exampleEnv });
+new CodePipelineStack(app, 'cicd-codepipeline-examples', { env: env });
 
 app.synth();
