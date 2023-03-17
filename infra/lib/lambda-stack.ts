@@ -12,14 +12,14 @@ export class LambdaStack extends Stack {
     super(scope, id, props);
 
     // dynamodb
-    const table = DynamoDbHelper.CreateTable(this, 'user-' + stageName, 'user');
+    //const table = DynamoDbHelper.CreateTable(this, 'user-' + stageName, 'user');
 
     // lambda from file
     const lambda = LambdaHelper.CreateFunctionFromFile(
       this, '../functions/example-1','lambda-hello-world-' + stageName, 'lambda-hello-world', stageName);
 
     // add write permission to lambda
-    table.grantReadWriteData(lambda);
+    //table.grantReadWriteData(lambda);
 
     // api gateway for lambda
     const restApi = ApiGwHelper.CreateRestApi(this, 'apigwt-hello-world');
