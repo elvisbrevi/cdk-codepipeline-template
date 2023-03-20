@@ -1,4 +1,3 @@
-*.js
 infra/*.js
 !jest.config.js
 infra/!jest.config.js
